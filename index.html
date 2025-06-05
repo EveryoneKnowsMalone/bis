@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTC Investment - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>BTC Investment</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-wallet"></i>Portfolio</a></li>
+                <li><a href="#"><i class="fas fa-exchange-alt"></i>Trade</a></li>
+                <li><a href="#"><i class="fas fa-history"></i>History</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
+            </ul>
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="page-title">
+                    <h2>Portfolio Dashboard</h2>
+                    <p class="last-updated">Last updated: <span id="lastUpdated">Just now</span></p>
+                </div>
+                <div class="top-actions">
+                    <button class="refresh-btn" id="refreshBtn">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Authentication Section -->
+            <section id="authSection" class="auth-section">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="signup">Sign Up</button>
+                </div>
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Login</button>
+                </form>
+                <form id="signupForm" class="auth-form hidden">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Sign Up</button>
+                </form>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="dashboard hidden">
+                <div class="dashboard-grid">
+                    <div class="portfolio-summary">
+                        <div class="portfolio-card">
+                            <h3>Total Portfolio Value</h3>
+                            <div class="value">$45,678.90</div>
+                            <div class="change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+2.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <h3>BTC Holdings</h3>
+                        <div class="value">1.23456789 BTC</div>
+                        <div class="change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+1.2%</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <h3>Available Funds</h3>
+                        <div class="value">$10,000.00</div>
+                        <button class="deposit-btn">Deposit</button>
+                    </div>
+                </div>
+
+                <div class="trading-actions">
+                    <div class="action-card buy">
+                        <h3>Buy BTC</h3>
+                        <div class="input-group">
+                            <input type="number" placeholder="Amount in USD">
+                            <button>Buy</button>
+                        </div>
+                    </div>
+                    <div class="action-card sell">
+                        <h3>Sell BTC</h3>
+                        <div class="input-group">
+                            <input type="number" placeholder="Amount in BTC">
+                            <button>Sell</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transactions">
+                    <h3>Recent Transactions</h3>
+                    <div class="transactions-list">
+                        <div class="transaction-item">
+                            <div class="transaction-icon buy">
+                                <i class="fas fa-arrow-down"></i>
+                            </div>
+                            <div class="transaction-details">
+                                <h4>Buy BTC</h4>
+                                <p>0.12345678 BTC at $45,000.00</p>
+                            </div>
+                            <div class="transaction-amount">
+                                <p>$5,555.56</p>
+                                <span class="date">2h ago</span>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-icon sell">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                            <div class="transaction-details">
+                                <h4>Sell BTC</h4>
+                                <p>0.05 BTC at $44,500.00</p>
+                            </div>
+                            <div class="transaction-amount">
+                                <p>$2,225.00</p>
+                                <span class="date">5h ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
